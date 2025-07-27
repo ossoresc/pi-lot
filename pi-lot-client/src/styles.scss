@@ -1,0 +1,32 @@
+@use '@angular/material' as mat;
+
+$app-theme: mat.define-theme((
+	color: (
+		theme-type: light,
+		primary: mat.$blue-palette,
+		tertiary: mat.$violet-palette,
+	)
+));
+
+:root {
+	@include mat.core();
+	@include mat.all-component-themes($app-theme);
+	@include mat.all-component-colors($app-theme);
+
+	--pi-lot-max-page-height: calc(100vh - 68px);
+}
+
+html, body {
+	height: 100%;
+	margin: 0;
+}
+
+body {
+	font-family: Roboto, "Helvetica Neue", sans-serif;
+	display: flex;
+	flex-direction: column;
+}
+
+.spacer {
+	flex: 1 1 auto;
+}

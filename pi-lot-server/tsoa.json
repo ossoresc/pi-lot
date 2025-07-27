@@ -1,0 +1,20 @@
+{
+    "entryFile": "src/index.ts",
+    "noImplicitAdditionalProperties": "throw-on-extras",
+    "controllerPathGlobs": ["src/controllers/*.ts"],
+    "spec": {
+        "name": "Pi-Lot API",
+        "description": "API documentation for the Pi-Lot NodeJS Server",
+        "outputDirectory": "src/swagger",
+        "specVersion": 3
+    },
+    "routes": {
+        "routesDir": "src/routes"
+    },
+    "compilerOptions": {
+        "baseUrl": ".",
+        "paths": {
+            "@pi-lot-interfaces/*": ["../pi-lot-interfaces/*"]
+        }
+    }
+}
