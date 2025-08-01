@@ -6,11 +6,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ApiService {
 
-	// TODO: move baseUrl to config
-	protected baseUrl = 'http://localhost:3000';
+	protected baseUrl: string;
 
 	constructor(
 		protected readonly httpClient: HttpClient,
 	) {
+		const host = window.location.hostname;
+		this.baseUrl = `http://${host}/api`
 	}
 }

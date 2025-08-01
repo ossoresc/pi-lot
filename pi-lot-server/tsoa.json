@@ -6,7 +6,8 @@
         "name": "Pi-Lot API",
         "description": "API documentation for the Pi-Lot NodeJS Server",
         "outputDirectory": "src/swagger",
-        "specVersion": 3
+        "specVersion": 3,
+        "basePath": "/api"
     },
     "routes": {
         "routesDir": "src/routes"

@@ -29,7 +29,7 @@ function initializeLogger(): Logger {
 				logFormat
 			),
 		}));
-		// TODO: check deployed directory
+		// TODO: check deployed directory and fix
 		logger.add(new transports.File({filename: 'dist/pi-lot-server/src/logs/error.log', level: 'error'}));
 		logger.add(new transports.File({filename: 'dist/pi-lot-server/src/logs/combined.log'}));
 	}

@@ -21,12 +21,12 @@ export class PiLotApp {
 		}
 
 		this.app.listen(this.port, () => {
-			this._logger.info("Pi-Lot server running on http://localhost:3000");
-			this._logger.info("Swagger documentation on http://localhost:3000/api-docs");
+			this._logger.info(`Pi-Lot server running on http://localhost:${this.port}`);
+			this._logger.info(`Swagger documentation on http://localhost:${this.port}/api-docs`);
 		});
 	}
 
-	public async initialize(port: number = 3000, clientCorsOrigin: string = "http://localhost:4200") {
+	public async initialize(port: number = 3000) {
 		if (this.app != null) {
 			this._logger.warn("Pi-Lot app is already initialized");
 			return;
@@ -42,7 +42,10 @@ export class PiLotApp {
 
 		// Cors
 		const corsOptions: CorsOptions = {
-			origin: [clientCorsOrigin],
+			origin: [
+				"http://localhost:4200",
+				"http://raspberrypi.local"
+			],
 			methods: ["GET", "POST", "PUT", "PATCH", "DELETE"],
 
 		}

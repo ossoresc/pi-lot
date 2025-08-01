@@ -5,7 +5,8 @@
     "main": "index.js",
     "scripts": {
         "server:build-views": "cpx src/views/**/* dist/pi-lot-server/src/views",
-        "server:build": "tsc && npm run server:build-views",
+        "server:build": "npm run server:tsoa && tsc && npm run server:build-views",
+        "server:build:dev": "tsc && npm run server:build-views",
         "server:tsoa": "tsoa routes && tsoa spec",
         "server:dev": "npm run server:tsoa && nodemon",
         "server:start": "npm run server:tsoa && npm run server:build && node ./dist/pi-lot-server/src/index.js"
