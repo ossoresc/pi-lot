@@ -1,0 +1,6 @@
+{
+    "watch": ["src"],
+    "ext": "ts,json,html,css",
+    "ignore": ["node_modules"],
+    "exec": "npm run server:build:dev && node ./dist/pi-lot-server/src/index.js"
+}
